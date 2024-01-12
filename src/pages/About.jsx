@@ -20,16 +20,16 @@ export function About() {
               title="React Logo"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography gutterBottom variant="h5">
                 Notifications Demo
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Developed by Jose Aguilar Quesada, using React and MUI
+                Developed by Jose Aguilar Quesada, using React, MUI and Zustand
               </Typography>
             </CardContent>
             <CardActions>
               <Button
-                size="small"
+                size="medium"
                 component={Link}
                 to="https://github.com/jmaq-cr/notifications-demo"
               >

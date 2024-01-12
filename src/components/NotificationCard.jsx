@@ -7,7 +7,7 @@ import MemoryIcon from "@mui/icons-material/Memory";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import CloseIcon from "@mui/icons-material/Close";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 
 export function NotificationCard(props) {
   let id = props.id;
@@ -26,7 +26,7 @@ export function NotificationCard(props) {
           <CreditCardIcon
             sx={{
               p: 1,
-              fontSize: 50,
+              fontSize: 55,
               color: color,
               backgroundColor: backgroundColor,
             }}
@@ -37,7 +37,7 @@ export function NotificationCard(props) {
           <MemoryIcon
             sx={{
               p: 1,
-              fontSize: 50,
+              fontSize: 55,
               color: color,
               backgroundColor: backgroundColor,
             }}
@@ -48,7 +48,7 @@ export function NotificationCard(props) {
           <ErrorOutlineIcon
             sx={{
               p: 1,
-              fontSize: 50,
+              fontSize: 55,
               color: color,
               backgroundColor: backgroundColor,
             }}
@@ -59,7 +59,7 @@ export function NotificationCard(props) {
           <NotificationsNoneIcon
             sx={{
               p: 1,
-              fontSize: 50,
+              fontSize: 55,
               color: color,
               backgroundColor: backgroundColor,
             }}
@@ -71,12 +71,12 @@ export function NotificationCard(props) {
   return (
     <>
       <Card sx={{ mb: 1.5, display: "flex" }}>
-        <Box m={2} display="flex" justifyContent="center" alignItems="center">
+        <Box ml={2.5} mr={0.5} display="flex" justifyContent="center" alignItems="center">
           {getIcon(iconType, color, backgroundColor)}
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="text">
+          <CardContent sx={{ flex: "1 0 auto", mt: 1 }}>
+            <Typography component="div" variant="body1">
               <b>{subject} </b>
               {message}
             </Typography>
@@ -96,9 +96,11 @@ export function NotificationCard(props) {
           alignItems="center"
           sx={{ marginLeft: "auto" }}
         >
-          <IconButton onClick={() => closeNotificationAction(id)}>
-            <CloseIcon sx={{ p: 1, fontSize: 45 }} />
-          </IconButton>
+          <Tooltip title="Delete" placement="right">
+            <IconButton onClick={() => closeNotificationAction(id)}>
+              <CloseIcon sx={{ p: 1, fontSize: 45 }} />
+            </IconButton>
+          </Tooltip>
         </Box>
       </Card>
     </>
